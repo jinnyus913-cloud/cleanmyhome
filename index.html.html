@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메이플자이 210동 2802호 청소 가이드</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+  :root{
+    --ink: #2b2b2b;
+    --paper: #fbfaf8;
+    --panel: #ffffff;
+    --line: #e3e1dd;
+    --gray-soft: #f3f2ef;
+    --gray-mid: #8b8880;
+    --accent: #6b7a6f; /* 은은한 세이지 그린 - 청소/케어 느낌 */
+    --accent-soft: #eef1ee;
+    --warn-bg: #fbf3ea;
+    --warn-border: #d9a45a;
+    --warn-text: #8a5a1e;
+    --shadow: 0 1px 3px rgba(43,43,43,0.06), 0 8px 24px rgba(43,43,43,0.04);
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(43,43,43,0.035) 1px, transparent 0);
+    background-size: 22px 22px;
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 56px 20px 80px;
+  }
+
+  .sheet{
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  /* ===== 헤더 ===== */
+  .header{
+    position: relative;
+    padding: 46px 48px 34px;
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(180deg, #fdfdfc 0%, #ffffff 100%);
+  }
+
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background: var(--accent);
+    display:inline-block;
+  }
+
+  h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.35;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .greeting{
+    font-size: 15px;
+    color: #5a5850;
+    max-width: 560px;
+  }
+  .greeting strong{
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .house-mark{
+    position:absolute;
+    right: 44px;
+    top: 42px;
+    width: 54px;
+    height: 54px;
+    opacity: 0.9;
+  }
+
+  /* ===== 본문 섹션 공통 ===== */
+  .section{
+    padding: 36px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section:last-of-type{ border-bottom:none; }
+
+  .section-title{
+    display:flex;
+    align-items:baseline;
+    gap: 10px;
+    margin: 0 0 22px;
+  }
+  .section-title .num{
+    font-family:'Noto Serif KR', serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .section-title h2{
+    font-family:'Noto Serif KR', serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin:0;
+  }
+
+  /* ===== 구역별 주의사항 ===== */
+  .common-guide{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .common-guide li{
+    display:flex;
+    align-items:flex-start;
+    gap: 14px;
+    background: var(--gray-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 15px 18px;
+    font-size: 16.5px;
+    font-weight: 600;
+    color: #363530;
+    line-height: 1.7;
+  }
+  .cg-zone{
+    flex-shrink:0;
+    width: 92px;
+    padding-top: 1px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--accent);
+  }
+  .cg-text{
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .cg-text p{ margin:0; }
+  .cg-highlight{
+    font-weight: 800;
+    font-size: 1.15em;
+    color: #c0392b;
+  }
+  .cg-arrow{
+    font-size: 1.1em;
+    vertical-align: middle;
+  }
+  .cg-text p.cg-sub{
+    color: var(--gray-mid);
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+  .cg-empty{
+    color: var(--gray-mid);
+    font-weight: 500;
+  }
+
+  /* ===== 도구 위치 ===== */
+  .tools-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .tool-item{
+    background: var(--gray-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display:flex;
+    align-items:center;
+    gap: 16px;
+  }
+  .tool-item .tool-icon{
+    width: 40px; height:40px;
+    flex-shrink:0;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 19px;
+  }
+  .tool-item .tool-text{
+    display:flex;
+    align-items:baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .tool-item .tool-text .t1{
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #6f6d66;
+    white-space: nowrap;
+  }
+  .tool-item .tool-text .t1::after{
+    content: "";
+  }
+  .tool-item .tool-text .t2{
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* ===== 비상 연락처 ===== */
+  .contact-box{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    background: var(--accent-soft);
+    border: 1px solid #d7ddd7;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .contact-box .label{
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .contact-box .name{
+    font-size: 15px;
+    color: #52514c;
+  }
+  .contact-box .phone{
+    font-family:'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  /* ===== 하단 문구 & 여백란 ===== */
+  .closing{
+    padding: 40px 48px 52px;
+    text-align:center;
+  }
+  .closing p{
+    font-size: 15px;
+    color: #5a5850;
+    margin: 0 0 26px;
+  }
+  .closing p .heart{
+    color: var(--accent);
+  }
+  .signature-area{
+    border: 1.4px dashed var(--line);
+    border-radius: 12px;
+    height: 90px;
+    max-width: 320px;
+    margin: 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: #b8b6ad;
+    font-size: 12.5px;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-note{
+    text-align:center;
+    font-size: 12px;
+    color: #b0aea6;
+    padding: 22px 20px 0;
+  }
+
+  @media (max-width: 600px){
+    .header, .section, .closing{ padding-left: 24px; padding-right: 24px; }
+    .house-mark{ display:none; }
+    .tools-grid{ grid-template-columns: 1fr; }
+    .common-guide li{ flex-direction: column; gap: 6px; }
+    .cg-zone{ width: auto; }
+    .contact-box{ flex-direction: column; align-items:flex-start; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <svg class="house-mark" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27 6L48 22V47C48 48.1 47.1 49 46 49H33V34H21V49H8C6.9 49 6 48.1 6 47V22L27 6Z" stroke="#6b7a6f" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+    <div class="eyebrow"><span class="dot"></span>HOME CARE GUIDE</div>
+    <h1>메이플자이 210동 2802호<br>청소 가이드</h1>
+    <p class="greeting"><strong>항상 저희 집을 깨끗하게 관리해 주셔서 감사합니다.</strong><br>
+    편안하게 참고하실 수 있도록 구역별 주의사항과 청소 도구 위치를 정리했습니다.</p>
+  </div>
+
+  <!-- 구역별 주의사항 -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num">01</span>
+      <h2>구역별 주의해주실 사항</h2>
+    </div>
+    <ul class="common-guide">
+      <li><span class="cg-zone">🚪 현관</span><div class="cg-text">
+        <p>현관에 있는 중문은, 사람이 가까이 가면 자동으로 열리고 닫히니 <strong class="cg-highlight">손으로 중문을 밀지 말아주세요.</strong></p>
+        <p class="cg-sub">(안에서 밖으로 나가실 때는 문 옆 버튼을 눌러주시면 됩니다.)</p>
+      </div></li>
+      <li><span class="cg-zone">🛋️ 거실</span><div class="cg-text">
+        <p>블라인드는 <strong class="cg-highlight">앞에 있는 줄을 아래로 내리면 올라갑니다.</strong> <span class="cg-arrow" aria-hidden="true">⬇️</span></p>
+        <p class="cg-sub">(반대로 하면 부러질 수 있으니 주의해 주세요.)</p>
+        <p>소파 옆에 있는 스탠드 조명은 망가지기 쉬우니 따로 청소하지 않으셔도 됩니다.</p>
+      </div></li>
+      <li><span class="cg-zone">🍳 부엌</span><div class="cg-text">
+        <p>부엌에 있는 쓰레기통은 손을 가까이 대면 뚜껑이 자동으로 열리고 닫혀요. <strong class="cg-highlight">따로 버튼을 누르지 않으셔도 됩니다.</strong></p>
+        <p>음식물 쓰레기는 부엌 세탁기실에 버려주세요.</p>
+        <p class="cg-sub">(뚜껑을 열어 음식물을 넣고, CLOSE 글자가 나오도록 뚜껑을 다시 닫아주시면 됩니다.)</p>
+        <p>음식물 거름망은 현관 펜트리에 있는 대형 쓰레기통에 버리시면 됩니다.</p>
+      </div></li>
+      <li><span class="cg-zone">🛏️ 안방</span><div class="cg-text">
+        <p>침대 옆에 있는 협탁은 물이 닿으면 안 되니 따로 청소해주지 않으셔도 됩니다.</p>
+      </div></li>
+      <li><span class="cg-zone">🚪 가운데방</span><div class="cg-text">
+        <p class="cg-empty">특이사항 없음</p>
+      </div></li>
+      <li><span class="cg-zone">🛌 제일 끝방</span><div class="cg-text">
+        <p>스탠드 조명은 망가지기 쉬우니 따로 청소하지 않으셔도 됩니다.</p>
+      </div></li>
+      <li><span class="cg-zone">♻️ 공통</span><div class="cg-text">
+        <p>분리수거와 종량제 쓰레기는 매일 배출 가능합니다.</p>
+        <p>(지하 2층 출입구 우측에 수거 장소가 있어요)</p>
+      </div></li>
+      <li><span class="cg-zone">🧺 기타</span><div class="cg-text">
+        <p>필요하신 물품은 말씀해 주시면 구비해 두겠습니다.</p>
+        <p>1~2주에 한 번씩 이불/베개커버 빨아주시면 감사드리겠습니다.</p>
+        <p>속옷은 다른 빨래랑 따로 세탁 부탁드립니다. <span class="cg-sub">(건조는 같이해도 무방)</span></p>
+      </div></li>
+    </ul>
+  </div>
+
+  <!-- 청소 도구 위치 -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num">02</span>
+      <h2>청소 도구 위치</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-item">
+        <div class="tool-icon">🧹</div>
+        <div class="tool-text">
+          <div class="t1">청소기 / 물걸레</div>
+          <div class="t2">거실 펜트리</div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon">🧴</div>
+        <div class="tool-text">
+          <div class="t1">화장실 세제 및 솔</div>
+          <div class="t2">부엌 세탁기실</div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon">🧼</div>
+        <div class="tool-text">
+          <div class="t1">다목적 세정제</div>
+          <div class="t2">부엌 세탁기실</div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon">🧽</div>
+        <div class="tool-text">
+          <div class="t1">걸레 / 극세사 타월</div>
+          <div class="t2">안방 베란다</div>
+        </div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon">🗑️</div>
+        <div class="tool-text">
+          <div class="t1">쓰레기봉투</div>
+          <div class="t2">주방 하부장 옆 서랍</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 비상 연락처 -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num">03</span>
+      <h2>비상 연락처</h2>
+    </div>
+    <div class="contact-box">
+      <div>
+        <div class="label">문의 및 연락</div>
+        <div class="name">집주인 연락처</div>
+      </div>
+      <div class="phone">010-4480-0225</div>
+    </div>
+  </div>
+
+  <!-- 하단 마무리 -->
+  <div class="closing">
+    <p>언제든 문의사항이 있으시면 편하게 연락 주세요 <span class="heart">♡</span></p>
+    <div class="signature-area">메모 / 서명란</div>
+  </div>
+
+</div>
+
+<p class="footer-note">Home Care Guide · 늘 신경 써 주셔서 감사합니다.</p>
+
+</body>
+</html>
