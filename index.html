@@ -53,17 +53,31 @@
     padding: 46px 48px 34px;
     border-bottom: 1px solid var(--line);
     background:
+      radial-gradient(circle at 12% 20%, #eaf3ea 0%, transparent 45%),
+      radial-gradient(circle at 88% 15%, #eaf1f7 0%, transparent 45%),
+      radial-gradient(circle at 75% 90%, #faf0e6 0%, transparent 50%),
       linear-gradient(180deg, #fdfdfc 0%, #ffffff 100%);
+    overflow: hidden;
   }
+
+  .header-deco{
+    position:absolute;
+    font-size: 20px;
+    opacity: 0.55;
+    user-select: none;
+  }
+  .deco-1{ top: 24px; left: 240px; font-size: 17px; transform: rotate(-8deg); }
+  .deco-2{ bottom: 20px; left: 44px; font-size: 16px; transform: rotate(6deg); }
+  .deco-3{ top: 90px; right: 120px; font-size: 15px; transform: rotate(10deg); opacity:0.45; }
 
   .eyebrow{
     display:flex;
     align-items:center;
-    gap: 10px;
+    gap: 8px;
     font-size: 12.5px;
     letter-spacing: 0.14em;
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 18px;
   }
@@ -77,15 +91,24 @@
     font-family:'Noto Serif KR', serif;
     font-weight: 700;
     font-size: 26px;
-    line-height: 1.35;
+    line-height: 1.4;
     margin: 0 0 16px;
     letter-spacing: -0.01em;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  h1 .title-emoji{
+    font-size: 30px;
+    line-height: 1;
   }
 
   .greeting{
     font-size: 15px;
     color: #5a5850;
     max-width: 560px;
+    position: relative;
+    z-index: 1;
   }
   .greeting strong{
     color: var(--ink);
@@ -143,8 +166,9 @@
     gap: 14px;
     background: var(--gray-soft);
     border: 1px solid var(--line);
+    border-left: 4px solid var(--zc, var(--accent));
     border-radius: 12px;
-    padding: 15px 18px;
+    padding: 15px 18px 15px 16px;
     font-size: 16.5px;
     font-weight: 600;
     color: #363530;
@@ -152,13 +176,24 @@
   }
   .cg-zone{
     flex-shrink:0;
-    width: 92px;
-    padding-top: 1px;
+    width: 104px;
+    padding: 4px 2px;
+    text-align: center;
     font-family: 'Noto Serif KR', serif;
     font-weight: 700;
-    font-size: 16px;
-    color: var(--accent);
+    font-size: 16.5px;
+    color: var(--zc, var(--accent));
+    background: var(--zbg, var(--accent-soft));
+    border-radius: 8px;
   }
+  .common-guide li:nth-child(1){ --zc: #4d7ea8; --zbg: #e9f0f6; }
+  .common-guide li:nth-child(2){ --zc: #6b7a6f; --zbg: #eef1ee; }
+  .common-guide li:nth-child(3){ --zc: #c17a4e; --zbg: #f7ece3; }
+  .common-guide li:nth-child(4){ --zc: #8a6f9e; --zbg: #f0eaf3; }
+  .common-guide li:nth-child(5){ --zc: #a8a6a0; --zbg: #f0efec; }
+  .common-guide li:nth-child(6){ --zc: #4f9a94; --zbg: #e7f3f2; }
+  .common-guide li:nth-child(7){ --zc: #ab8a3a; --zbg: #f5eeda; }
+  .common-guide li:nth-child(8){ --zc: #b3697e; --zbg: #f7e9ed; }
   .cg-text{
     display:flex;
     flex-direction: column;
@@ -168,7 +203,7 @@
   .cg-highlight{
     font-weight: 800;
     font-size: 1.15em;
-    color: #c0392b;
+    color: #1565c0;
   }
   .cg-arrow{
     font-size: 1.1em;
@@ -203,12 +238,22 @@
     width: 40px; height:40px;
     flex-shrink:0;
     border-radius: 10px;
-    background: var(--accent-soft);
+    background: var(--tbg, var(--accent-soft));
     display:flex;
     align-items:center;
     justify-content:center;
     font-size: 19px;
   }
+  .tool-item:nth-child(1) .tool-icon{ --tbg: #eef1ee; }
+  .tool-item:nth-child(2) .tool-icon{ --tbg: #f7ece3; }
+  .tool-item:nth-child(3) .tool-icon{ --tbg: #f7ece3; }
+  .tool-item:nth-child(4) .tool-icon{ --tbg: #f0eaf3; }
+  .tool-item:nth-child(5) .tool-icon{ --tbg: #f7ece3; }
+  .tool-item:nth-child(1){ border-left: 4px solid #6b7a6f; --tc: #6b7a6f; }
+  .tool-item:nth-child(2){ border-left: 4px solid #c17a4e; --tc: #c17a4e; }
+  .tool-item:nth-child(3){ border-left: 4px solid #c17a4e; --tc: #c17a4e; }
+  .tool-item:nth-child(4){ border-left: 4px solid #8a6f9e; --tc: #8a6f9e; }
+  .tool-item:nth-child(5){ border-left: 4px solid #c17a4e; --tc: #c17a4e; }
   .tool-item .tool-text{
     display:flex;
     align-items:baseline;
@@ -216,9 +261,9 @@
     gap: 4px 10px;
   }
   .tool-item .tool-text .t1{
-    font-size: 14.5px;
-    font-weight: 500;
-    color: #6f6d66;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--tc, var(--accent));
     white-space: nowrap;
   }
   .tool-item .tool-text .t1::after{
@@ -284,6 +329,7 @@
   @media (max-width: 600px){
     .header, .section, .closing{ padding-left: 24px; padding-right: 24px; }
     .house-mark{ display:none; }
+    .header-deco{ display:none; }
     .tools-grid{ grid-template-columns: 1fr; }
     .common-guide li{ flex-direction: column; gap: 6px; }
     .cg-zone{ width: auto; }
@@ -297,12 +343,15 @@
 
   <!-- 헤더 -->
   <div class="header">
+    <span class="header-deco deco-1">✨</span>
+    <span class="header-deco deco-2">🧺</span>
+    <span class="header-deco deco-3">🧴</span>
     <svg class="house-mark" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M27 6L48 22V47C48 48.1 47.1 49 46 49H33V34H21V49H8C6.9 49 6 48.1 6 47V22L27 6Z" stroke="#6b7a6f" stroke-width="1.6" stroke-linejoin="round"/>
     </svg>
-    <div class="eyebrow"><span class="dot"></span>HOME CARE GUIDE</div>
-    <h1>메이플자이 210동 2802호<br>청소 가이드</h1>
-    <p class="greeting"><strong>항상 저희 집을 깨끗하게 관리해 주셔서 감사합니다.</strong><br>
+    <div class="eyebrow"><span class="dot"></span>HOME CARE GUIDE 🧹</div>
+    <h1><span class="title-emoji">🏠</span>메이플자이 210동 2802호<br>청소 가이드</h1>
+    <p class="greeting"><strong>안녕하세요 방순희님, 저희 집을 깨끗하게 관리해 주셔서 감사합니다 💛</strong><br>
     편안하게 참고하실 수 있도록 구역별 주의사항과 청소 도구 위치를 정리했습니다.</p>
   </div>
 
