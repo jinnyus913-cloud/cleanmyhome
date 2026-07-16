@@ -200,6 +200,10 @@
     gap: 9px;
   }
   .cg-text p{ margin:0; }
+  .cg-text > p::before{
+    content: "- ";
+    color: var(--gray-mid);
+  }
   .cg-highlight{
     font-weight: 800;
     font-size: 1.15em;
@@ -344,15 +348,14 @@
   <!-- 헤더 -->
   <div class="header">
     <span class="header-deco deco-1">✨</span>
-    <span class="header-deco deco-2">🧺</span>
     <span class="header-deco deco-3">🧴</span>
     <svg class="house-mark" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M27 6L48 22V47C48 48.1 47.1 49 46 49H33V34H21V49H8C6.9 49 6 48.1 6 47V22L27 6Z" stroke="#6b7a6f" stroke-width="1.6" stroke-linejoin="round"/>
     </svg>
     <div class="eyebrow"><span class="dot"></span>HOME CARE GUIDE 🧹</div>
     <h1><span class="title-emoji">🏠</span>메이플자이 210동 2802호<br>청소 가이드</h1>
-    <p class="greeting"><strong>안녕하세요 방순희님, 저희 집을 깨끗하게 관리해 주셔서 감사합니다 💛</strong><br>
-    편안하게 참고하실 수 있도록 구역별 주의사항과 청소 도구 위치를 정리했습니다.</p>
+    <p class="greeting"><strong>안녕하세요 방순희님, 저희 집을 깨끗하게 관리해 주셔서 감사해요 💛</strong><br>
+    편안하게 참고하실 수 있도록 구역별 주의사항과 청소 도구 위치를 정리했어요.</p>
   </div>
 
   <!-- 구역별 주의사항 -->
@@ -363,37 +366,35 @@
     </div>
     <ul class="common-guide">
       <li><span class="cg-zone">🚪 현관</span><div class="cg-text">
-        <p>현관에 있는 중문은, 사람이 가까이 가면 자동으로 열리고 닫히니 <strong class="cg-highlight">손으로 중문을 밀지 말아주세요.</strong></p>
-        <p class="cg-sub">(안에서 밖으로 나가실 때는 문 옆 버튼을 눌러주시면 됩니다.)</p>
-        <p>현관 펜트리에 큰 흰색 쓰레기통이 있어요. 재활용이 아닌 쓰레기는 거기에 넣으시면 됩니다.</p>
+        <p>현관에 있는 중문은, 사람이 가까이 가면 자동으로 열리고 닫히니 <strong class="cg-highlight">손으로 중문을 밀지 말아주세요.</strong> 안에서 밖으로 나가실 때는 <strong class="cg-highlight">문 옆 버튼</strong>을 눌러주시면 돼요.</p>
+        <p>현관 펜트리에 큰 흰색 쓰레기통이 있어요. 재활용이 아닌 쓰레기는 거기에 넣으시면 돼요.</p>
       </div></li>
       <li><span class="cg-zone">🛋️ 거실</span><div class="cg-text">
-        <p>블라인드는 <strong class="cg-highlight">앞에 있는 줄을 아래로 내리면 올라갑니다.</strong> <span class="cg-arrow" aria-hidden="true">⬇️</span></p>
-        <p class="cg-sub">(반대로 하면 부러질 수 있으니 주의해 주세요.)</p>
-        <p>소파 옆에 있는 스탠드 조명은 망가지기 쉬우니 따로 청소하지 않으셔도 됩니다.</p>
+        <p>블라인드는 <strong class="cg-highlight">앞에 있는 줄을 아래로 내리면 올라가요.</strong> <span class="cg-arrow" aria-hidden="true">⬇️</span> (반대로 하면 부러질 수 있으니 주의해 주세요.)</p>
+        <p>소파 옆에 있는 스탠드 조명은 망가지기 쉬우니 청소하지 않으셔도 돼요.</p>
       </div></li>
       <li><span class="cg-zone">🍳 부엌</span><div class="cg-text">
-        <p>부엌에 있는 쓰레기통은 손을 가까이 대면 뚜껑이 자동으로 열리고 닫혀요. <strong class="cg-highlight">따로 버튼을 누르지 않으셔도 됩니다.</strong></p>
-        <p>큰 음식물 쓰레기는 부엌 세탁기실에 버려주세요. <span class="cg-sub">(뚜껑을 열어 음식물을 넣고, CLOSE 글자가 나오도록 뚜껑을 다시 닫아주시면 됩니다.)</span></p>
+        <p>부엌에 있는 쓰레기통은 손을 가까이 대면 뚜껑이 자동으로 열리고 닫혀요. <strong class="cg-highlight">버튼을 누르지 않으셔도 돼요.</strong></p>
+        <p>큰 음식물 쓰레기는 부엌 세탁기실에 버려주세요. <span class="cg-sub">(뚜껑을 열어 음식물을 넣고, CLOSE 글자가 나오도록 뚜껑을 다시 닫아주시면 돼요.)</span></p>
         <p>개수대에 있는 음식물 거름망은, 냄새가 나지 않게 작은 크린백에 넣어서 현관 펜트리에 있는 대형 쓰레기통에 버려주세요.</p>
       </div></li>
       <li><span class="cg-zone">🛏️ 안방</span><div class="cg-text">
-        <p>침대 옆에 있는 협탁은 물이 닿으면 안 되니 따로 청소해주지 않으셔도 됩니다.</p>
+        <p>침대 옆에 있는 협탁은 물이 닿으면 안 되니 청소해주지 않으셔도 돼요.</p>
       </div></li>
       <li><span class="cg-zone">🚪 가운데방</span><div class="cg-text">
         <p class="cg-empty">특이사항 없음</p>
       </div></li>
       <li><span class="cg-zone">🛌 제일 끝방</span><div class="cg-text">
-        <p>스탠드 조명은 망가지기 쉬우니 따로 청소하지 않으셔도 됩니다.</p>
+        <p>스탠드 조명은 망가지기 쉬우니 청소하지 않으셔도 돼요.</p>
       </div></li>
       <li><span class="cg-zone">♻️ 공통</span><div class="cg-text">
-        <p>분리수거와 종량제 쓰레기는 매일 배출 가능합니다.</p>
-        <p>(지하 2층 출입구 우측에 수거 장소가 있어요)</p>
+        <p>분리수거와 종량제 쓰레기는 매일 배출 가능해요.</p>
+        <p>배출장소 : 지하 2층 출입구 우측</p>
       </div></li>
       <li><span class="cg-zone">🧺 기타</span><div class="cg-text">
-        <p>필요하신 물품은 말씀해 주시면 구비해 두겠습니다.</p>
-        <p>1~2주에 한 번씩 이불/베개커버 빨아주시면 감사드리겠습니다.</p>
-        <p>속옷은 다른 빨래랑 따로 세탁 부탁드립니다. <span class="cg-sub">(건조는 같이해도 무방)</span></p>
+        <p>필요하신 물품은 말씀해 주시면 구비해 둘게요.</p>
+        <p>이불이랑 베개 커버는 1~2주에 한 번정도씩 세탁 부탁드려요.</p>
+        <p>속옷은 다른 빨래랑 따로 세탁 부탁드려요. <span class="cg-sub">(건조는 같이 하셔도 돼요)</span></p>
       </div></li>
     </ul>
   </div>
@@ -465,7 +466,7 @@
 
 </div>
 
-<p class="footer-note">Home Care Guide · 늘 신경 써 주셔서 감사합니다.</p>
+<p class="footer-note">Home Care Guide · 늘 신경 써 주셔서 감사해요.</p>
 
 </body>
 </html>
